@@ -1,5 +1,7 @@
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 
 export const Settings = () => {
-    return <Typography variant="h4">Settings</Typography>
-}
+    return <Box >
+        <Typography variant="h4">Settings</Typography>
+        </Box>
+};
