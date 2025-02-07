@@ -3,8 +3,9 @@ import { Home } from "./pages/Home";
 import { NavBar } from "./components/NavBar";
 import { Box } from "@mui/material";
 import { SideBar } from "./components/SideBar";
-import { Users } from "./pages/Users";
-import { Settings } from "./pages/Settings";
+import { PrivateRoute } from "./components/PrivateRoute";
+import { AdminPage } from "./components/AdminPage";
+import { UserPage } from "./components/UserPage";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
         <SideBar/> 
         <Box component="main" sx={{ flexGrow: 1, p: 3, ml: "240px" }}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/settings" element={<Settings />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<PrivateRoute role="Admin"><AdminPage /></PrivateRoute>} />
+          <Route path="/user" element={<PrivateRoute role="User"><UserPage /></PrivateRoute>} />
           </Routes>
         </Box>
       </Box>
